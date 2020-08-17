@@ -1,0 +1,26 @@
+pragma solidity ^0.6.0;
+
+contract Counter {  
+    //"uint" es un tipo de variable que almacena numeros positivos 
+    // "Counter" es el nombre del contrato inteligente
+    uint count;
+    
+    constructor() public{
+    // "constructor" es una funcion especial que solo se ejecuta una vez para ejecutar el contrato inteligente en la blockchain.
+    count = 0; }
+    // aqui definimos como primer valor a la variable "count" igual a 0 para la funcion "constructor" la ejecute solo la primera vez.
+    
+    function getCount() public view returns(uint) {
+        //"getCount" es el nombre de la function
+        //"public" es para que la funcion sea visible fuera del contrato inteligente. Para que el usuario pueda ver esa informacion
+        // "view" es para ver la actualizacion de la funcion. En este caso, ver como el contador va cambiando de valor.
+        // "returnos (uint)" es para que la funcion devuelva los valores de la variable "uint"
+        return count;
+    }
+        
+    function incrementCount() public {
+        count = count + 1;
+        // en esta funcion, "count" empezará a contar de a 1
+        
+    }
+}
